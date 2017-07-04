@@ -6,7 +6,7 @@ module QyWechatApi
     end
 
     def token_expired?
-      return false unless client.expired_at
+      return true unless client.expired_at
       # 如果当前token过期时间小于现在的时间，则重新获取一次
       client.expired_at <= Time.now.to_i
     end
